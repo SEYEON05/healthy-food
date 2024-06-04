@@ -37,7 +37,10 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.AllowAny',
-    )
+    ),
+    'DEFAULT_PARSER_CLASSES': [
+        'rest_framework.parsers.JSONParser',
+    ]
 }
 
 
@@ -69,6 +72,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'drf_yasg',
     'corsheaders',
+    'kakaopay',
 ]
 
 MIDDLEWARE = [
@@ -171,3 +175,6 @@ LOGOUT_REDIRECT_URL='/'
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+KAKAO_SECRET_KEY = "PRD34E14554881CD7151B375365546C201A88AA3"
